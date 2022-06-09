@@ -23,5 +23,11 @@ $(function(){
 		$('.typeA').show();
 		$('.typeB').hide();
 	})
+	$('.opencase').on('click', function(){
+		$('.case').fadeIn();
+	})
+	$('.case span').on('click', function(){
+		$('.case').fadeOut();
+	})
 })
 
