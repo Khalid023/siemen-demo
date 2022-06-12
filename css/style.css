@@ -215,6 +215,12 @@
 
 .icon-Plus:before {
   content: "\e92c";
+  color: white;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 46px;
+  text-align: center;
+  margin: 0 8px;
 }
 
 .icon-Reading-time:before {

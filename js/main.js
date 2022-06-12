@@ -62,7 +62,6 @@ if (navigator.userAgent.match(/mobile/i)) {
 
 		//内容设置
 		var state = 0;
-		$('.contentitems').width($(document).width());
 		$('.contentitems').height($(document).height());
 		$('.pichome img').fadeIn(2000, function () {
 			$('.controlitems').fadeIn('slow')
@@ -71,12 +70,20 @@ if (navigator.userAgent.match(/mobile/i)) {
 		$('.icon-Home').click(function () {
 			state = 0
 			$('.pica img').fadeOut('slow');
-			$('.picb img').fadeOut('slow');
+			$('.picb img').fadeOut('slow', function () {
+				$('.picb img').css({
+					left: '0',
+					top: '0',
+					width: '100%',
+				})
+			});
+			$('.picbb img').hide();
 			$('#btna').show();
 			$('#btnb').show();
 			$('#btnbb').hide();
 			$('#casebtn').show();
 			$('#topicbtn').hide();
+			$('.pages').hide();
 		})
 		$('.icon-Back').click(function () {
 			if (state == 0) {
@@ -90,13 +97,17 @@ if (navigator.userAgent.match(/mobile/i)) {
 				$('#btnbb').hide();
 			} else if (state == 2) {
 				state--;
-				$('.picb img').animate({
-					left: '0',
-					top: '0',
-					width: '100%',
-				}, 'slow')
+				$('.picbb img').fadeOut('fast', function () {
+					$('.picb img').animate({
+						left: '0',
+						top: '0',
+						width: '100%',
+					}, 'slow')
+				})
+				$('#btnbb').show();
 				$('#topicbtn').hide();
-
+			} else if(state == 3){
+				$('.pages').fadeOut();
 			}
 		})
 		//场景1
@@ -116,31 +127,45 @@ if (navigator.userAgent.match(/mobile/i)) {
 			$('#btna').hide();
 			$('#casebtn').hide();
 		})
-
+		//场景二二级
 		$('#btnbb').click(function () {
 			state = 2
 			$('#btnbb').hide();
 			$('.picb img').animate({
-				left: '-250px',
-				top: '-100px',
-				width: '150%',
+				left: '-600px',
+				top: '-200px',
+				width: '200%',
 			}, 'slow', function () {
+				$('.picbb img').fadeIn();
 				$('#topicbtn').show();
 
 			})
 
 		})
-
 		//详情页
 		$('#topicbtn').click(function () {
+			state = 3
 			$('#topic').fadeIn();
+			$('#topicbtn').hide();
 		})
 		$('#casebtn').click(function () {
+			state = 3
 			$('#case').fadeIn();
 		})
-		$('.pages span').click(function () {
-			$(this).parent().fadeOut();
+		$('#topic span').click(function () {
+			state = 2
+			$('#topic').fadeOut(function () {
+				$('#topicbtn').fadeIn();
+			});
+
 		})
+		$('#casebtn span').click(function () {
+			$('#case').fadeOut(function () {
+				$('#casebtn').fadeIn();
+			});
+
+		})
+
 	})
 
 }
