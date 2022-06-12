@@ -97,17 +97,20 @@ if (navigator.userAgent.match(/mobile/i)) {
 				$('#btnbb').hide();
 			} else if (state == 2) {
 				state--;
+				$('#topicbtn').hide();
 				$('.picbb img').fadeOut('fast', function () {
 					$('.picb img').animate({
 						left: '0',
 						top: '0',
 						width: '100%',
-					}, 'slow')
+					}, 'slow', function () {
+						$('#btnbb').show();
+					})
 				})
-				$('#btnbb').show();
-				$('#topicbtn').hide();
-			} else if(state == 3){
-				$('.pages').fadeOut();
+
+
+			} else if (state == 3) {
+				alert('请先关闭详情页')
 			}
 		})
 		//场景1
@@ -132,13 +135,12 @@ if (navigator.userAgent.match(/mobile/i)) {
 			state = 2
 			$('#btnbb').hide();
 			$('.picb img').animate({
-				left: '-600px',
-				top: '-200px',
+				left: '-400px',
+				top: '-270px',
 				width: '200%',
 			}, 'slow', function () {
 				$('.picbb img').fadeIn();
 				$('#topicbtn').show();
-
 			})
 
 		})
@@ -149,7 +151,6 @@ if (navigator.userAgent.match(/mobile/i)) {
 			$('#topicbtn').hide();
 		})
 		$('#casebtn').click(function () {
-			state = 3
 			$('#case').fadeIn();
 		})
 		$('#topic span').click(function () {
@@ -159,7 +160,7 @@ if (navigator.userAgent.match(/mobile/i)) {
 			});
 
 		})
-		$('#casebtn span').click(function () {
+		$('#case span').click(function () {
 			$('#case').fadeOut(function () {
 				$('#casebtn').fadeIn();
 			});
