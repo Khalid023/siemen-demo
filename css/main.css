@@ -19,8 +19,6 @@ body {
 .contentitems {
 	position: absolute;
 	z-index: 1;
-	width: 1920px;
-	height: 100px;
 	overflow: hidden;
 }
 
@@ -205,8 +203,9 @@ body {
 	position: absolute;
 	width: 100px;
 	height: 100px;
-	top: 100px;
-	left: 650px;
+	top: 12%;
+	left: 37%;
+	background-color: #fff;
 }
 
 #topicbtn {
@@ -214,8 +213,8 @@ body {
 	position: absolute;
 	width: 50px;
 	height: 50px;
-	top: 310px;
-	left: 700px;
+	top: 36%;
+	left: 40%;
 	border-radius: 25px;
 	background-color: #00557c;
 	border: 2px solid #0087be;
@@ -230,16 +229,18 @@ body {
 	position: absolute;
 	width: 150px;
 	height: 150px;
-	top: 460px;
-	left: 550px;
+	top: 54%;
+	left: 32%;
+	background-color: #fff;
 }
 
 #btnb {
 	position: absolute;
 	width: 150px;
 	height: 150px;
-	top: 230px;
-	left: 1200px;
+	top: 24%;
+	left: 68%;
+	background-color: #fff;
 }
 
 #btnbb {
@@ -247,8 +248,9 @@ body {
 	position: absolute;
 	width: 150px;
 	height: 150px;
-	top: 250px;
-	left: 500px;
+	top: 27%;
+	left: 30%;
+	background-color: #fff;
 }
 
 .pichome img {
@@ -280,7 +282,7 @@ body {
 	display: none;
 	position: absolute;
 	z-index: 3;
-	left: -400px;
-	top: -270px;
+	left: -22%;
+	top: -28%;
 	width: 200%;
 }

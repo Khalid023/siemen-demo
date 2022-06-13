@@ -8,14 +8,19 @@ if (navigator.userAgent.match(/mobile/i)) {
 } else {
 	$(function () {
 		//设置控件组位置
-		$('.controlitems').css('height', $(window).height() - 100);
-		$('.controlitems').css('width', $(window).width() - 200);
+		var realwidth = $(window).width();
+		var realheight = $(window).height();
+		$('.controlitems').css('height', realheight - 100);
+		$('.controlitems').css('width', realwidth - 200);
 		$(window).resize(function () {
-			$('.controlitems').css('height', $(window).height() - 100);
-			if ($(window).width() >= 700) {
-				$('.controlitems').css('width', $(window).width() - 200);
+			$('.controlitems').css('height', realheight - 100);
+			if (realwidth >= 700) {
+				$('.controlitems').css('width', realwidth - 200);
 			} else { $('.controlitems').css('width', '500px') }
 		})
+		$('.contentitems').height(realheight);
+		$('.contentitems').width(realwidth);
+		console.log()
 
 		//菜单设置
 		$('.nav').on('click mouseenter', function () {
@@ -62,8 +67,7 @@ if (navigator.userAgent.match(/mobile/i)) {
 
 		//内容设置
 		var state = 0;
-		$('.contentitems').height($(document).height());
-		$('.pichome img').fadeIn(3000, function () {
+		$('.pichome img').fadeIn(50, function () {
 			$('.controlitems').fadeIn('slow')
 		});
 		//控件组
@@ -136,8 +140,8 @@ if (navigator.userAgent.match(/mobile/i)) {
 			state = 2
 			$('#btnbb').hide();
 			$('.picb img').animate({
-				left: '-400px',
-				top: '-270px',
+				left: '-22%',
+				top: '-28%',
 				width: '200%',
 			}, 'slow', function () {
 				$('.picbb img').fadeIn();
