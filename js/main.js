@@ -67,7 +67,7 @@ if (navigator.userAgent.match(/mobile/i)) {
 
 		//内容设置
 		var state = 0;
-		$('.pichome img').fadeIn(50, function () {
+		$('.pichome img').fadeIn(3000, function () {
 			$('.controlitems').fadeIn('slow')
 		});
 		//控件组
