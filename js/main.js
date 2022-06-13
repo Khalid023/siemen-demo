@@ -8,18 +8,20 @@ if (navigator.userAgent.match(/mobile/i)) {
 } else {
 	$(function () {
 		//设置控件组位置
-		var realwidth = $(window).width();
-		var realheight = $(window).height();
-		$('.controlitems').css('height', realheight - 100);
-		$('.controlitems').css('width', realwidth - 200);
+		$('.controlitems').css('height', $(window).height() - 100);
+		$('.controlitems').css('width', $(window).width() - 200);
+		$('.contentitems').height($(window).height());
+		$('.contentitems').width($(window).width());
+		
 		$(window).resize(function () {
-			$('.controlitems').css('height', realheight - 100);
-			if (realwidth >= 700) {
-				$('.controlitems').css('width', realwidth - 200);
+			$('.controlitems').css('height', $(window).height() - 100);
+			if ($(window).width() >= 700) {
+				$('.controlitems').css('width', $(window).width() - 200);
 			} else { $('.controlitems').css('width', '500px') }
+			$('.contentitems').height($(window).height());
+			$('.contentitems').width($(window).width());
 		})
-		$('.contentitems').height(realheight);
-		$('.contentitems').width(realwidth);
+
 		console.log()
 
 		//菜单设置
@@ -145,7 +147,7 @@ if (navigator.userAgent.match(/mobile/i)) {
 				width: '200%',
 			}, 'slow', function () {
 				$('.picbb img').fadeIn();
-				$('#topicbtn').show();
+				$('#topicbtn').fadeIn();
 			})
 
 		})
