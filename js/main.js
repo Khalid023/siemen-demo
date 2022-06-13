@@ -95,6 +95,7 @@ if (navigator.userAgent.match(/mobile/i)) {
 				$('#btna').show();
 				$('#btnb').show();
 				$('#btnbb').hide();
+				$('#casebtn').show();
 			} else if (state == 2) {
 				state--;
 				$('#topicbtn').hide();
